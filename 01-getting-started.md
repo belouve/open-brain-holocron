@@ -123,6 +123,7 @@ create trigger thoughts_updated_at
 ```
 
 </details>
+This might fail (it did for me), in which case, just create one from scratch as I have [instructions here](https://github.com/belouve/open-brain-holocron?tab=readme-ov-file#step-9--deploy-the-discord-capture-function)
 
 ![2.3](https://img.shields.io/badge/2.3-Create_the_Search_Function-555?style=for-the-badge&labelColor=F4511E)
 
