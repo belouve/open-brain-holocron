@@ -217,7 +217,7 @@ Organize these under a channel group/category. New channels added to that group 
 
 Get each Channel ID: right-click channel → **Copy Channel ID** (requires Developer Mode: User Settings → Advanced → Developer Mode).
 
-> ⚠️ **Excel ID mangling:** Paste channel IDs into Notepad or a text file first. Verify digit count (should be 18-19 digits). Never trust Excel with these values. This...was a significant headache for Belouve.
+> ⚠️ **Excel ID mangling:** Paste channel IDs into Notepad or a text file first. Verify digit count (should be 18-19 digits). Never trust Excel with these values. This...was a significant headache for Belouve. #askmehowiknow
 
 **8.5 Create Webhook URLs for Confirmation Replies**
 
@@ -677,4 +677,4 @@ Once your HOLOCRON is running:
 ---
 
 *This guide is a living document. Updates will follow as the build evolves.*  
-*Questions or contributions — find Belouve in the OB1 Discord or DC608.*
+*Questions or contributions — find Belouve in the BHIS Discord or DC608.*
