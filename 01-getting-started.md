@@ -957,8 +957,8 @@ Because you're using OpenRouter, you can swap models by editing the model string
 
 Your MCP server handles both reading and writing. But if you want a quick-capture channel outside your AI tools:
 
-- **[Slack Capture](../integrations/slack-capture/)** — Type thoughts in a Slack channel, automatically embedded and stored
-- More integrations in [`/integrations`](../integrations/)
+- **[Slack Capture](https://github.com/NateBJones-Projects/OB1/blob/main/docs/integrations/slack-capture/)** — Type thoughts in a Slack channel, automatically embedded and stored
+- More integrations in [`/integrations`](https://github.com/NateBJones-Projects/OB1/blob/main/docs/integrations/)
 
 </details>
 
@@ -973,7 +973,7 @@ Want to add a new capture source? Ask it how to create another Edge Function. Wa
 
 You just built AI infrastructure using AI. That pattern doesn't stop here.
 
-Got stuck or want to share what you've built? Join the [Open Brain Discord](https://discord.gg/Cgh9WJEkeG) — there's a `#help` channel for troubleshooting and a `#show-and-tell` channel for showing off.
+Got stuck or want to share what you've built? Join the [BHIS Discord]([https://discord.gg/Cgh9WJEkeG](https://discord.gg/bhis)) — there's a `#ai-security` channel for troubleshooting or for showing off. Can tag @belouve for guidance.
 
 </details>
 
@@ -981,7 +981,7 @@ Got stuck or want to share what you've built? Join the [Open Brain Discord](http
 
 ## ➡️ Your Next Step
 
-Your Open Brain is live. Now make it work for you. The **[Companion Prompts](02-companion-prompts.md)** cover the full lifecycle from here:
+Your Open Brain is live. Now make it work for you. The **[Companion Prompts](https://github.com/NateBJones-Projects/OB1/blob/main/docs/02-companion-prompts.md)** cover the full lifecycle from here:
 
 - ✅ **Memory Migration** — Pull everything your AI already knows about you into your brain so every tool starts with context instead of zero
 - ✅ **Second Brain Migration** — Bring your existing notes from Notion, Obsidian, or any other system into your Open Brain without starting over
@@ -997,10 +997,12 @@ The companion prompts pull out what your AI already knows. **Recipes** go furthe
 
 | Recipe | What It Does | Time |
 | ------ | ------------ | ---- |
-| [Email History Import](../recipes/email-history-import/) | Pull your Gmail archive into searchable thoughts | 30 min |
-| [ChatGPT Conversation Import](../recipes/chatgpt-conversation-import/) | Ingest your full ChatGPT data export | 30 min |
+| [Email History Import](https://github.com/NateBJones-Projects/OB1/blob/main/docs/recipes/email-history-import/) | Pull your Gmail archive into searchable thoughts | 30 min |
+| [ChatGPT Conversation Import](https://github.com/NateBJones-Projects/OB1/blob/main/docs/recipes/chatgpt-conversation-import/) | Ingest your full ChatGPT data export | 30 min |
 
-Browse all recipes in [`/recipes`](../recipes/).
+Browse all recipes in [`/recipes`](https://github.com/NateBJones-Projects/OB1/blob/main/docs/recipes/).
+
+Belouve might add additonal recipes [here](/recipes/)
 
 ---
 
