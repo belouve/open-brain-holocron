@@ -90,7 +90,9 @@ Webhook: #cti-inbox           ____________
 ## Part 1 — Core Infrastructure (Steps 1–7)
 
 Follow the base guide for steps 1–6:  
-**https://github.com/NateBJones-Projects/OB1/blob/main/docs/01-getting-started.md**
+**[Base Guide For initial steps](https://github.com/belouve/open-brain-holocron/blob/main/01-getting-started.md)**
+
+Also consult the Windows-specific notes below, these are mostly some hiccups that were smoothed out when Belouve built his HOLOCRON.
 
 This covers:
 - Supabase project creation
