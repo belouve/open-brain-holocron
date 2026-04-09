@@ -2,7 +2,7 @@
 
 This is the core of Open Brain — the foundation everything else builds on. Once this is running, you'll have a personal knowledge system that any AI can read from and write to. Every extension, recipe, and integration in this repo starts here.
 
-About 30 minutes. Zero coding experience. Two services:
+Initially claimed about 30 minutes, but took me an afternoon. Minimal coding experience. Two services:
 
 - **[Supabase](https://supabase.com)** — Your database (free tier)
 - **[OpenRouter](https://openrouter.ai)** — Your AI gateway (~$5 in credits, lasts months)
