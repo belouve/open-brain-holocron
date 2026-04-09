@@ -123,7 +123,6 @@ create trigger thoughts_updated_at
 ```
 
 </details>
-This might fail (it did for me), in which case, just create one from scratch as I have [instructions here](https://github.com/belouve/open-brain-holocron?tab=readme-ov-file#step-9--deploy-the-discord-capture-function)
 
 ![2.3](https://img.shields.io/badge/2.3-Create_the_Search_Function-555?style=for-the-badge&labelColor=F4511E)
 
@@ -462,6 +461,7 @@ supabase functions new open-brain-mcp
 ```bash
 curl -o supabase/functions/open-brain-mcp/index.ts https://raw.githubusercontent.com/NateBJones-Projects/OB1/main/server/index.ts
 ```
+This might fail (it did for me), in which case, just create one from scratch as I have [instructions here](https://github.com/belouve/open-brain-holocron?tab=readme-ov-file#step-9--deploy-the-discord-capture-function)
 
 **3. Download the dependencies file:**
 
@@ -638,6 +638,8 @@ supabase functions new open-brain-mcp
 ```powershell
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/NateBJones-Projects/OB1/main/server/index.ts -OutFile supabase\functions\open-brain-mcp\index.ts
 ```
+
+This might fail (it did for me), in which case, just create one from scratch as I have [instructions here](https://github.com/belouve/open-brain-holocron?tab=readme-ov-file#step-9--deploy-the-discord-capture-function)
 
 **3. Download the dependencies file:**
 
