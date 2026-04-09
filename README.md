@@ -2,6 +2,7 @@
 
 > Built and documented by **Belouve** | BHIS Community Leader | DC608 DEF CON Local Group  
 > Base system by Nate B. Jones — all core infrastructure credit to the OB1 project.
+> Was discussed on [AI Security Ops Podcast](https://www.youtube.com/@AISecurityOps)
 
 ---
 
@@ -83,7 +84,7 @@ Webhook: #holocron-capture    ____________
 Webhook: #cti-inbox           ____________
 ```
 
-> ⚠️ **Windows/Excel warning:** If you use Excel as your tracker, Discord and Supabase IDs are 18-19 digit numbers. Excel will silently mangle them by rounding or adding trailing zeros. Use a plain text file, Notepad++, or a text column format in Excel. Always verify IDs copied from Excel against the Discord Developer Portal before using them in code.
+> ⚠️ **Windows/Excel warning:** If you use Excel as your tracker, Discord and Supabase IDs are 18-19 digit numbers. Excel will silently mangle them by rounding or adding trailing zeros. Use a plain text file, Notepad++, or a text column format in Excel. Always verify IDs copied from Excel against the Discord Developer Portal before using them in code. This...was a significant headache for Belouve.
 
 ---
 
@@ -209,13 +210,13 @@ Create these channels in your server:
 |---|---|---|
 | `#holocron-capture` | General thoughts, notes, ideas | none |
 | `#cti-inbox` | Threat intel articles and findings | `cti` |
-| `# personal-private` | Personal/private content (optional) | ` personal-private` |
+| `#personal-private` | Personal/private content (optional) | `personal-private` |
 
 Organize these under a channel group/category. New channels added to that group automatically inherit bot access.
 
 Get each Channel ID: right-click channel → **Copy Channel ID** (requires Developer Mode: User Settings → Advanced → Developer Mode).
 
-> ⚠️ **Excel ID mangling:** Paste channel IDs into Notepad or a text file first. Verify digit count (should be 18-19 digits). Never trust Excel with these values.
+> ⚠️ **Excel ID mangling:** Paste channel IDs into Notepad or a text file first. Verify digit count (should be 18-19 digits). Never trust Excel with these values. This...was a significant headache for Belouve.
 
 **8.5 Create Webhook URLs for Confirmation Replies**
 
@@ -520,7 +521,7 @@ In Discord, test each channel with `/capture`:
 |---|---|---|
 | `#holocron-capture` | `/capture` thought: "test" tags: "test" | 🧠 Captured as... |
 | `#cti-inbox` | `/capture` thought: "CVE test capture" (no tags) | 🛡️ Captured as... |
-| `# personal-private` | `/capture` thought: "test personal capture" (no tags) | 🌙 Captured as... |
+| `#personal-private` | `/capture` thought: "test personal capture" (no tags) | 🌙 Captured as... |
 
 The `cti` and ` personal-private` context tags are applied automatically based on channel — you don't need to type them.
 
@@ -534,7 +535,7 @@ The HOLOCRON uses metadata tags to separate content by context. This is behavior
 
 Capture this rule into your HOLOCRON once it's running:
 
-> "Context separation rule: Do not mix professional/CTI context with personal/ personal-private context in outputs. Only surface  personal-private content when explicitly requested. Never reference personal hobbies or lifestyle details in work-related outputs."
+> "Context separation rule: Do not mix professional/CTI context with personal/ personal-private context in outputs. Only surface personal-private content when explicitly requested. Never reference personal hobbies or lifestyle details in work-related outputs."
 
 **Context buckets:**
 
@@ -542,24 +543,30 @@ Capture this rule into your HOLOCRON once it's running:
 |---|---|---|
 | Professional/Work | `work` | CTI, employer-related, security work |
 | Technical/Projects | `technical` | Build notes, configs, project tracking |
-| Personal/Life | `personal` | General personal notes |
+| Personal/Life | `personal` | General notes |
 | CTI | `cti` | Threat intel (auto-applied in #cti-inbox) |
-| Personal/Private | ` personal-private` | Private personal content (auto-applied in # personal-private) |
+| Personal/Private | `personal-private` | Private personal content (auto-applied in # personal-private) |
 
 ---
 
 ### Protocol CTI-ALPHA — Monthly Threat Intel Briefing
 
-Paste this query into any HOLOCRON-connected AI to generate your monthly briefing:
+Edit the areas to make it specific to your sector (FINANCIAL, MEDICAL, INDSUTRIAL, etc)
+Paste this query into any HOLOCRON-connected AI to generate your monthly briefing.
+This is an initial version to get you started, you can tune and tweak and update what it saves, then can best be invoked by saying, even in a new cold chat:
+Connect to open brain HOLOCRON and run CTI-ALPHA.
+
+That can even be tuned in context with "...run CTI-ALPHA with emphasis on ransomware threats"
 
 ```
+Save the following to open brain HOLOCRON as CTI-ALPHA, to be invoked whenever I say "Run Protocol CTI-ALPHA".  Future updates can be edited with a note of version number, and to superced previous versions.
+
 You are preparing a monthly Cyber Threat Intelligence briefing for an Information 
 Security team at a financial technology company.
 
 Using the HOLOCRON search_thoughts and list_thoughts tools, retrieve all CTI intel 
 captured over the past 30 days. Cast a wide net — search for: vulnerability exploits, 
-malware, phishing, fraud, cybercrime, ransomware, APT, supply chain, and any fintech 
-or financial sector threats.
+malware, phishing, fraud, cybercrime, ransomware, APT, supply chain, and any [EDIT FOR YOURE SECTOR] sector threats.
 
 Produce a structured 10-minute readout briefing:
 
@@ -569,15 +576,16 @@ Prepared for: Information Security Team
 EXECUTIVE SUMMARY
 2-3 sentences on the overall threat landscape this month.
 
-PRIORITY: FINTECH & FINANCIAL SECTOR THREATS
-Lead with anything directly relevant to financial technology, payment systems, or 
+PRIORITY: [EDIT TO YOUR INDUSTRY] FINTECH & FINANCIAL SECTOR THREATS
+Example: FINTECH & FINANCIAL SECTOR, MEDICAL SECTOR, INDUSTRIAL CONTROLS SECTOR
+Lead with anything directly relevant to (EDIT FOR YOUR SECTOR TERMS!!!): financial technology, payment systems, or 
 financial data. For each: threat name, what it does, why it matters, recommended action.
 
 ELEVATED THREATS — BROADER LANDSCAPE
 Other significant threats worth awareness. Same format.
 
 ACTION ITEMS FOR THIS TEAM
-Specific actions for compliance, testers, security awareness, or defense center.
+Specific actions for compliance, testers, security awareness, or defensive blue team.
 
 SOURCES CAPTURED THIS MONTH
 Brief list of what was ingested and where it came from.
