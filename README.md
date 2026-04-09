@@ -563,7 +563,7 @@ That can even be tuned in context with "...run CTI-ALPHA with emphasis on ransom
 Save the following to open brain HOLOCRON as CTI-ALPHA, to be invoked whenever I say "Run Protocol CTI-ALPHA".  Future updates can be edited with a note of version number, and to superced previous versions.
 
 You are preparing a monthly Cyber Threat Intelligence briefing for an Information 
-Security team at a financial technology company.
+Security team at a [EDIT FOR YOUR TYPE OF] company.
 
 Using the HOLOCRON search_thoughts and list_thoughts tools, retrieve all CTI intel 
 captured over the past 30 days. Cast a wide net — search for: vulnerability exploits, 
