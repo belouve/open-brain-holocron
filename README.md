@@ -51,8 +51,8 @@ Claude / ChatGPT / Gemini ←→ MCP Server (hosted)
 - A Discord account and server you control
 - Supabase account (free tier)
 - OpenRouter account (free, ~$5 in credits lasts months)
-- Claude Desktop installed (primary AI interface)
-- Supabase CLI installed via Scoop
+- Claude Desktop installed (If using Claude as primary AI interface)
+- Supabase CLI installed via Scoop (we have instructions [here](https://github.com/belouve/open-brain-holocron/edit/main/README.md#windows-specific-notes-for-part-1) )
 
 ---
 
