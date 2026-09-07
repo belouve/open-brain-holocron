@@ -878,6 +878,95 @@ Every MCP client handles remote servers slightly differently. The server accepts
 
 </details>
 
+<details>
+<summary>🤖 <strong>7.6 — Gemini CLI</strong></summary>
+
+> [!NOTE]
+> Gemini CLI is Google's open source terminal-based AI tool — free to use with a Google account or Gemini API key. This is the recommended Gemini connection method for security practitioners.
+
+**Install Gemini CLI (if not already installed):**
+
+```bash
+npm install -g @google/gemini-cli
+```
+
+Verify it worked:
+
+```bash
+gemini --version
+```
+
+**Authenticate (first time only):**
+
+```bash
+gemini
+```
+
+Follow the prompt to sign in with your Google account or Gemini API key. Your credentials are stored locally after the first login.
+
+**Add CEREBRO to Gemini CLI:**
+
+Locate or create the Gemini settings file:
+
+- **Mac/Linux:** `~/.gemini/settings.json`
+- **Windows:** `%USERPROFILE%\.gemini\settings.json`
+
+If the file or folder doesn't exist, create it:
+
+🟩 **Mac/Linux:**
+```bash
+mkdir -p ~/.gemini && touch ~/.gemini/settings.json
+```
+
+🟦 **Windows (PowerShell):**
+```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.gemini"
+New-Item -ItemType File -Force "$env:USERPROFILE\.gemini\settings.json"
+```
+
+Open `settings.json` and add your CEREBRO entry — replace the placeholders with your values from the credential tracker:
+
+```json
+{
+  "mcpServers": {
+    "CEREBRO-CTI": {
+      "httpUrl": "https://YOUR_PROJECT_REF.supabase.co/functions/v1/open-brain-mcp",
+      "headers": {
+        "x-brain-key": "YOUR_CEREBRO_MCP_ACCESS_KEY"
+      },
+      "timeout": 30000
+    }
+  }
+}
+```
+
+> [!NOTE]
+> If you are also connecting your HOLOCRON, add it as a second entry under `mcpServers` with a different key name (e.g. `"HOLOCRON"`). Both can coexist in the same file.
+
+**Verify the connection:**
+
+```bash
+gemini mcp list
+```
+
+You should see `CEREBRO-CTI` listed. Then start Gemini CLI and run:
+/mcp
+
+
+This lists all connected MCP servers and their available tools. You should see `search_thoughts`, `list_thoughts`, `thought_stats`, and `capture_thought` under CEREBRO-CTI.
+
+**Test it:**
+Search CEREBRO for any CTI captures
+
+
+Gemini CLI should call the `search_thoughts` tool and return results.
+
+> [!TIP]
+> Like ChatGPT, Gemini CLI sometimes needs an explicit tool reference the first time. If it doesn't reach for CEREBRO automatically, be direct: "Use the CEREBRO-CTI search_thoughts tool to find notes about [topic]." It picks up the pattern quickly after the first successful call.
+
+✅ **Done when:** Gemini CLI shows CEREBRO-CTI in `gemini mcp list` and successfully calls a CEREBRO tool in chat.
+</details>
+
 ✅ **Done when:** You can start a conversation in your AI client and it has access to Open Brain tools (search_thoughts, list_thoughts, thought_stats, capture_thought).
 
 ---
