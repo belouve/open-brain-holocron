@@ -615,6 +615,10 @@ Set your OpenRouter key from Step 4:
 supabase secrets set OPENROUTER_API_KEY=your-openrouter-key-here
 ```
 
+> [!CAUTION]
+> `supabase secrets list` only shows truncated digests — you cannot verify the full stored key value from the CLI. If you ever get 401 errors and suspect a key mismatch, do not try to compare digest values. Use the key reset process in the Troubleshooting section instead.
+
+
 > [!NOTE]
 > `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are automatically available inside Edge Functions — you don't need to set them.
 
@@ -677,6 +681,22 @@ https://YOUR_PROJECT_REF.supabase.co/functions/v1/open-brain-mcp
 ```
 
 Replace `YOUR_PROJECT_REF` with the project ref from your credential tracker (Step 1). Paste the full URL into your credential tracker as the MCP Server URL.
+
+> [!IMPORTANT]
+> **Test your server is live before connecting any AI client.**
+> Paste your MCP Connection URL (with `?key=` at the end) directly into a browser. A working server returns:
+> ```
+> {"jsonrpc":"2.0","error":{"code":-32000,"message":"Not Acceptable: Client must accept text/event-stream"},"id":null}
+> ```
+> This is correct and expected — a browser is not an MCP client. The error confirms the server is running and your key is valid.
+>
+> If you get a **404** — your URL structure is wrong. The correct format is:
+> ```
+> https://YOUR_PROJECT_REF.supabase.co/functions/v1/open-brain-mcp?key=YOUR_KEY
+> ```
+> Not the Supabase dashboard URL. Not the project URL without the function path.
+>
+> If you get an **auth error or 401** — your key doesn't match. Use the reset process in Troubleshooting.
 
 Now build your **MCP Connection URL** by adding your access key to the end:
 
@@ -937,6 +957,22 @@ First search on a cold function takes a few seconds — the Edge Function is wak
 **❌ Capture tool saves but metadata is wrong**
 
 The metadata extraction is best-effort — the LLM is making its best guess with limited context. The embedding is what powers semantic search, and that works regardless of how the metadata gets classified. If you consistently want a specific classification, use the capture templates from the prompt kit to give the LLM clearer signals.
+
+**❌ Getting 401 errors — MCP Access Key mismatch**
+
+`supabase secrets list` shows a truncated DIGEST, not the full key value — you cannot verify what's stored from the CLI. If you suspect a mismatch, reset the key entirely. Run this in PowerShell from your project folder:
+
+```powershell
+$newkey = -join ((1..32) | ForEach-Object { '{0:x2}' -f (Get-Random -Maximum 256) })
+Write-Host "Your new key: $newkey"
+supabase secrets set MCP_ACCESS_KEY=$newkey
+supabase functions deploy open-brain-mcp --no-verify-jwt
+```
+
+Copy the printed key immediately. Update your credential tracker AND rebuild your MCP Connection URL with the new key:
+https://YOUR_PROJECT_REF.supabase.co/functions/v1/open-brain-mcp?key=NEW_KEY_HERE
+
+Then update the connector URL in Claude Desktop, Claude Code, ChatGPT, or wherever you have it connected. Every connected client needs the new URL.
 
 </details>
 
