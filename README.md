@@ -106,6 +106,8 @@ This covers:
 
 ### Windows-Specific Notes for Part 1
 
+All Windows-specific notes — including Supabase CLI installation via Scoop, PowerShell commands, file download syntax, MCP key reset process, and server verification — are integrated directly into the relevant steps in [01-getting-started.md](https://github.com/belouve/open-brain-holocron/blob/main/01-getting-started.md). No separate supplemental reading needed. Follow the 🟦 Windows sections within each step.
+
 **Supabase CLI installation:**
 ```powershell
 # Install Scoop first if needed
