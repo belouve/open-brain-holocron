@@ -459,14 +459,14 @@ supabase functions new open-brain-mcp
 **2. Download the server code:**
 
 ```bash
-curl -o supabase/functions/open-brain-mcp/index.ts https://raw.githubusercontent.com/NateBJones-Projects/OB1/main/server/index.ts
+curl -o supabase/functions/open-brain-mcp/index.ts https://raw.githubusercontent.com/belouve/open-brain-holocron/main/server/index.ts
 ```
 This might fail (it did for me), in which case, just create one from scratch as I have [instructions here](https://github.com/belouve/open-brain-holocron?tab=readme-ov-file#step-9--deploy-the-discord-capture-function)
 
 **3. Download the dependencies file:**
 
 ```bash
-curl -o supabase/functions/open-brain-mcp/deno.json https://raw.githubusercontent.com/NateBJones-Projects/OB1/main/server/deno.json
+curl -o supabase/functions/open-brain-mcp/deno.json https://raw.githubusercontent.com/belouve/open-brain-holocron/main/server/deno.json
 ```
 
 > [!WARNING]
@@ -640,7 +640,7 @@ supabase functions new open-brain-mcp
 **2. Download the server code:**
 
 ```powershell
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/NateBJones-Projects/OB1/main/server/index.ts -OutFile supabase\functions\open-brain-mcp\index.ts
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/belouve/open-brain-holocron/main/server/index.ts -OutFile supabase\functions\open-brain-mcp\index.ts
 ```
 
 This might fail (it did for me), in which case, just create one from scratch as I have [instructions here](https://github.com/belouve/open-brain-holocron?tab=readme-ov-file#step-9--deploy-the-discord-capture-function)
@@ -648,7 +648,7 @@ This might fail (it did for me), in which case, just create one from scratch as 
 **3. Download the dependencies file:**
 
 ```powershell
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/NateBJones-Projects/OB1/main/server/deno.json -OutFile supabase\functions\open-brain-mcp\deno.json
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/belouve/open-brain-holocron/main/server/deno.json -OutFile supabase\functions\open-brain-mcp\deno.json
 ```
 
 > [!WARNING]
